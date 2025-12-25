@@ -1,26 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
 @import "tailwindcss";
 
+/* ===== HATAKU DIMSUM Design System ===== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --color-cream: #FDF8F3;
+  --color-beige: #F5EDE4;
+  --color-blush: #E8C4B8;
+  --color-brown-dark: #2D2424;
+  --color-brown-medium: #5C4A42;
+  --color-brown-light: #8B7355;
+  --color-gold: #C9A86C;
+  --color-gold-dark: #A68B4C;
+
+  /* Red Accent - Brick Red (appetizing, warm, Asian heritage) */
+  --color-red-accent: #8B2635;
+  --color-red-hover: #6D1E2A;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Noto Sans JP', sans-serif;
+
+  /* Spacing */
+  --section-padding: clamp(3rem, 8vw, 6rem);
+  --container-padding: clamp(1rem, 5vw, 2rem);
+
+  /* Transitions */
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ===== Base Styles ===== */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-brown-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-brown-dark);
+}
+
+/* ===== Utility Classes ===== */
+
+.container-main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.section-padding {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+/* Text styles */
+.text-heading-xl {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.text-heading-lg {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.text-heading-md {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-body-lg {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--color-brown-medium);
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-brown-medium);
+}
+
+/* Background utilities */
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+.bg-beige {
+  background-color: var(--color-beige);
+}
+
+.bg-blush {
+  background-color: var(--color-blush);
+}
+
+/* Text color utilities */
+.text-brown-dark {
+  color: var(--color-brown-dark);
+}
+
+.text-brown-medium {
+  color: var(--color-brown-medium);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-red-accent {
+  color: var(--color-red-accent);
+}
+
+/* ===== Button Styles ===== */
+
+/* Primary CTA - Brick Red (main actions) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-red-accent);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 38, 53, 0.3);
+}
+
+/* Secondary CTA - Gold (soft actions) */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-gold);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(201, 168, 108, 0.3);
+}
+
+/* Outlined button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: var(--color-brown-dark);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: 2px solid var(--color-brown-dark);
+  cursor: pointer;
+  transition: all 0.3s var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-brown-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== Card Styles ===== */
+
+.card-menu {
+  background-color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(45, 36, 36, 0.05);
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.card-menu:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(45, 36, 36, 0.1);
+}
+
+/* Price highlight with red accent */
+.price-highlight {
+  color: var(--color-red-accent);
+  font-weight: 700;
+}
+
+/* ===== Scrollbar Styling ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brown-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brown-medium);
+}
+
+/* ===== Selection ===== */
+
+::selection {
+  background-color: var(--color-blush);
+  color: var(--color-brown-dark);
+}
+
+/* ===== Page Layout ===== */
+
+.page-header {
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.page-content {
+  padding-bottom: var(--section-padding);
 }
