@@ -6,12 +6,12 @@ import Image from 'next/image';
 const orderPlatforms = [
     {
         name: 'GoFood',
-        href: 'https://gofood.co.id',
+        href: 'https://gofood.co.id/surabaya/restaurant/hataku-dimsum-porong-d724146d-1efe-4e03-84cd-e749b83c498e',
         logo: '/images/gofood-logo.jpg',
     },
     {
         name: 'ShopeeFood',
-        href: 'https://shopeefood.co.id',
+        href: 'https://shopee.co.id/universal-link/now-food/shop/22131557?deep_and_deferred=1&shareChannel=copy_link',
         logo: '/images/shopeefood-logo.png',
     },
 ];

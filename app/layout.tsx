@@ -23,38 +23,77 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: 'HATAKU DIMSUM | Dimsum & Gyoza Premium',
+  title: {
+    default: 'Hataku Dimsum - Dimsum & Gyoza Premium Porong Sidoarjo',
+    template: '%s | Hataku Dimsum',
+  },
   description:
-    'HATAKU DIMSUM - Nikmati kelezatan dimsum dan gyoza autentik, dibuat segar setiap hari dengan resep tradisional dan bahan berkualitas terbaik.',
+    'Hataku Dimsum - Nikmati kelezatan dimsum dan gyoza autentik khas Porong, Sidoarjo. Dibuat segar setiap hari dengan resep tradisional dan bahan berkualitas terbaik. Tersedia mentai signature, mentai spesial, dan berbagai varian lezat.',
   keywords: [
-    'dimsum',
-    'gyoza',
-    'hataku',
-    'siomay',
-    'hakau',
+    'Hataku Dimsum',
+    'Hataku',
+    'dimsum Porong',
+    'dimsum Sidoarjo',
+    'dimsum premium',
+    'gyoza Porong',
+    'mentai dimsum',
+    'dimsum enak Sidoarjo',
+    'jual dimsum Porong',
+    'dimsum halal',
+    'siomay Porong',
+    'hakau Sidoarjo',
     'makanan asia',
-    'restoran dimsum',
-    'bandung',
+    'restoran dimsum Sidoarjo',
   ],
-  authors: [{ name: 'HATAKU DIMSUM' }],
+  authors: [{ name: 'Hataku Dimsum' }],
+  creator: 'Hataku Dimsum',
+  publisher: 'Hataku Dimsum',
+  formatDetection: {
+    telephone: true,
+    address: true,
+  },
   openGraph: {
-    title: 'HATAKU DIMSUM | Dimsum & Gyoza Premium',
+    title: 'Hataku Dimsum - Dimsum & Gyoza Premium Porong Sidoarjo',
     description:
-      'Nikmati kelezatan dimsum dan gyoza autentik, dibuat segar setiap hari.',
+      'Nikmati kelezatan dimsum dan gyoza autentik khas Porong, Sidoarjo. Dibuat segar setiap hari dengan resep tradisional.',
     type: 'website',
     locale: 'id_ID',
-    siteName: 'HATAKU DIMSUM',
+    siteName: 'Hataku Dimsum',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Hataku Dimsum - Dimsum Premium Porong Sidoarjo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HATAKU DIMSUM | Dimsum & Gyoza Premium',
+    title: 'Hataku Dimsum - Dimsum & Gyoza Premium',
     description:
-      'Nikmati kelezatan dimsum dan gyoza autentik, dibuat segar setiap hari.',
+      'Nikmati kelezatan dimsum dan gyoza autentik khas Porong, Sidoarjo.',
+    images: ['/images/logo.png'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: 'your-verification-code',
+  },
+  alternates: {
+    canonical: '/',
+  },
+  category: 'food',
 };
 
 export const viewport: Viewport = {
