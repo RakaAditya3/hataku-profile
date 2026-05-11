@@ -5,22 +5,18 @@ import TestimonialCarousel from '@/app/components/sections/TestimonialCarousel';
 
 const features = [
     {
-        icon: '🌿',
         title: 'Bahan Segar',
         description: 'Dipilih langsung dari supplier terpercaya setiap hari',
     },
     {
-        icon: '👨‍🍳',
         title: 'Resep Autentik',
         description: 'Dikembangkan dari resep tradisional turun-temurun',
     },
     {
-        icon: '❤️',
         title: 'Dibuat dengan Cinta',
         description: 'Setiap dimsum dibuat dengan penuh dedikasi',
     },
     {
-        icon: '🏆',
         title: 'Kualitas Premium',
         description: 'Standar tinggi dalam setiap proses pembuatan',
     },
@@ -123,19 +119,31 @@ export default function AboutPage() {
                         Mengapa <span style={{ color: 'var(--color-red-accent)' }}>HATAKU</span>?
                     </h3>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {features.map((feature, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 + index * 0.1 }}
-                                className="text-center p-6 rounded-2xl"
-                                style={{ backgroundColor: 'var(--color-beige)' }}
+                                className="p-6 rounded-2xl border"
+                                style={{
+                                    backgroundColor: 'transparent',
+                                    borderColor: 'rgba(139, 38, 53, 0.12)',
+                                }}
                             >
-                                <span className="text-5xl block mb-4">{feature.icon}</span>
+                                <span
+                                    className="block text-sm font-semibold tracking-[0.2em] mb-3"
+                                    style={{ color: 'var(--color-red-accent)' }}
+                                >
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                                <span
+                                    className="block w-8 h-px mb-4"
+                                    style={{ backgroundColor: 'var(--color-brown-light)' }}
+                                />
                                 <h4
-                                    className="font-semibold mb-2"
+                                    className="font-semibold text-lg mb-2"
                                     style={{
                                         fontFamily: 'var(--font-heading)',
                                         color: 'var(--color-brown-dark)',
@@ -143,7 +151,10 @@ export default function AboutPage() {
                                 >
                                     {feature.title}
                                 </h4>
-                                <p className="text-sm" style={{ color: 'var(--color-brown-medium)' }}>
+                                <p
+                                    className="text-sm leading-relaxed"
+                                    style={{ color: 'var(--color-brown-medium)' }}
+                                >
                                     {feature.description}
                                 </p>
                             </motion.div>

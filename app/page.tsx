@@ -250,11 +250,11 @@ export default function Home() {
                             </h3>
                             <ol className="space-y-4 mb-8">
                                 {[
-                                    { emoji: '🛒', text: 'Pilih menu favorit Anda' },
-                                    { emoji: '💬', text: 'Chat WhatsApp kami' },
-                                    { emoji: '✅', text: 'Konfirmasi pesanan & pembayaran' },
-                                    { emoji: '🥟', text: 'Dimsum segar siap dinikmati!' },
-                                ].map((step, idx) => (
+                                    'Pilih menu favorit Anda',
+                                    'Chat WhatsApp kami',
+                                    'Konfirmasi pesanan & pembayaran',
+                                    'Dimsum segar siap dinikmati!',
+                                ].map((text, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
                                         <span
                                             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-semibold"
@@ -269,10 +269,7 @@ export default function Home() {
                                             className="pt-1 text-base"
                                             style={{ color: 'var(--color-brown-medium)' }}
                                         >
-                                            <span className="mr-2" aria-hidden="true">
-                                                {step.emoji}
-                                            </span>
-                                            {step.text}
+                                            {text}
                                         </span>
                                     </li>
                                 ))}
@@ -306,84 +303,45 @@ export default function Home() {
                                     Pemesanan
                                 </span>
                             </h3>
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-3">
-                                    <span className="text-xl" aria-hidden="true">
-                                        🕐
-                                    </span>
-                                    <div>
+                            <ul className="space-y-5">
+                                {[
+                                    {
+                                        title: 'Jam Buka',
+                                        value: 'Setiap hari 16.30 – 21.00 WIB',
+                                    },
+                                    {
+                                        title: 'Area Layanan',
+                                        value: 'Porong & sekitarnya, Sidoarjo',
+                                    },
+                                    {
+                                        title: 'Pilihan Saus',
+                                        value:
+                                            'Mentai, Tartar, Volcano, Cheese, Mushroom, Bolognese, Mix & more',
+                                    },
+                                    {
+                                        title: 'Cara Order',
+                                        value: 'Order via WhatsApp',
+                                    },
+                                ].map((info) => (
+                                    <li
+                                        key={info.title}
+                                        className="border-l-2 pl-4"
+                                        style={{ borderColor: 'var(--color-blush)' }}
+                                    >
                                         <p
-                                            className="font-semibold"
-                                            style={{ color: 'var(--color-brown-dark)' }}
+                                            className="text-xs uppercase tracking-wider font-semibold mb-1"
+                                            style={{ color: 'var(--color-brown-light)' }}
                                         >
-                                            Jam Buka
+                                            {info.title}
                                         </p>
                                         <p
                                             className="text-sm"
-                                            style={{ color: 'var(--color-brown-medium)' }}
-                                        >
-                                            Setiap hari 16.30 – 21.00 WIB
-                                        </p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-xl" aria-hidden="true">
-                                        📍
-                                    </span>
-                                    <div>
-                                        <p
-                                            className="font-semibold"
                                             style={{ color: 'var(--color-brown-dark)' }}
                                         >
-                                            Area Layanan
+                                            {info.value}
                                         </p>
-                                        <p
-                                            className="text-sm"
-                                            style={{ color: 'var(--color-brown-medium)' }}
-                                        >
-                                            Porong & sekitarnya, Sidoarjo
-                                        </p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-xl" aria-hidden="true">
-                                        🥫
-                                    </span>
-                                    <div>
-                                        <p
-                                            className="font-semibold"
-                                            style={{ color: 'var(--color-brown-dark)' }}
-                                        >
-                                            Pilihan Saus
-                                        </p>
-                                        <p
-                                            className="text-sm"
-                                            style={{ color: 'var(--color-brown-medium)' }}
-                                        >
-                                            Mentai, Tartar, Volcano, Cheese, Mushroom, Bolognese,
-                                            Mix & more
-                                        </p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-xl" aria-hidden="true">
-                                        📦
-                                    </span>
-                                    <div>
-                                        <p
-                                            className="font-semibold"
-                                            style={{ color: 'var(--color-brown-dark)' }}
-                                        >
-                                            Cara Order
-                                        </p>
-                                        <p
-                                            className="text-sm"
-                                            style={{ color: 'var(--color-brown-medium)' }}
-                                        >
-                                            Order via WhatsApp
-                                        </p>
-                                    </div>
-                                </li>
+                                    </li>
+                                ))}
                             </ul>
                         </motion.div>
                     </div>
