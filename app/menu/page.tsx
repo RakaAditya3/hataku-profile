@@ -3,152 +3,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import MenuCard from '../components/sections/MenuCard';
+import {
+    menuItems,
+    PORTION_LABEL,
+    SAUCE_COUNT_LABEL,
+} from '../data/menu';
 
 const categories = [
     { id: 'all', name: 'Semua' },
     { id: 'signature', name: 'Mentai Signature' },
     { id: 'spesial', name: 'Mentai Spesial' },
-];
-
-// Menu data - image filenames match exactly with /menu/{slug}.png
-const menuItems = [
-    // === Mentai Signature ===
-    {
-        id: 1,
-        name: 'Regular Cheezy',
-        slug: 'regular-cheezy',
-        description: 'Mentai dengan topping keju leleh yang creamy dan gurih',
-        price: 'Rp 23.000',
-        category: 'signature',
-        image: '/menu/regular-cheezy.JPG',
-    },
-    {
-        id: 2,
-        name: 'Large Cheezy',
-        slug: 'large-cheezy',
-        description: 'Porsi besar mentai dengan topping keju leleh yang melimpah',
-        price: 'Rp 28.000',
-        category: 'signature',
-        image: '/menu/large-cheezy.JPG',
-    },
-    {
-        id: 3,
-        name: 'Family Cheezy',
-        slug: 'family-cheezy',
-        description: 'Porsi keluarga mentai cheezy untuk berbagi bersama',
-        price: 'Rp 55.000',
-        category: 'signature',
-        image: '/menu/family-cheezy.JPG',
-    },
-    {
-        id: 4,
-        name: 'Regular Mozza',
-        slug: 'regular-mozza',
-        description: 'Mentai dengan taburan keju mozzarella yang meleleh sempurna',
-        price: 'Rp 27.000',
-        category: 'signature',
-        image: '/menu/regular-mozza.jpeg',
-    },
-    {
-        id: 5,
-        name: 'Large Mozza',
-        slug: 'large-mozza',
-        description: 'Porsi besar mentai mozza dengan keju stretchy yang menggoda',
-        price: 'Rp 30.000',
-        category: 'signature',
-        image: '/menu/large-mozza.jpeg',
-    },
-    {
-        id: 6,
-        name: 'Family Mozza',
-        slug: 'family-mozza',
-        description: 'Porsi keluarga mentai mozza untuk momen spesial bersama',
-        price: 'Rp 60.000',
-        category: 'signature',
-        image: '/menu/family-mozza.JPG',
-    },
-    {
-        id: 7,
-        name: 'Regular Original',
-        slug: 'regular-original',
-        description: 'Mentai original dengan saus mentai klasik yang otentik',
-        price: 'Rp 20.000',
-        category: 'signature',
-        image: '/menu/regular-original.jpeg',
-    },
-    {
-        id: 8,
-        name: 'Large Original',
-        slug: 'large-original',
-        description: 'Porsi besar mentai original dengan cita rasa autentik',
-        price: 'Rp 25.000',
-        category: 'signature',
-        image: '/menu/large-original.jpeg',
-    },
-    {
-        id: 9,
-        name: 'Family Original',
-        slug: 'family-original',
-        description: 'Porsi keluarga mentai original untuk dinikmati bersama',
-        price: 'Rp 50.000',
-        category: 'signature',
-        image: '/menu/family-original.jpeg',
-    },
-    // === Mentai Spesial ===
-    {
-        id: 10,
-        name: 'Regular Mix',
-        slug: 'regular-mix',
-        description: 'Kombinasi mentai dengan berbagai topping pilihan',
-        price: 'Rp 25.000',
-        category: 'spesial',
-        image: '/menu/regular-mix.JPG',
-    },
-    {
-        id: 11,
-        name: 'Large Mix',
-        slug: 'large-mix',
-        description: 'Porsi besar mentai mix dengan topping lengkap',
-        price: 'Rp 30.000',
-        category: 'spesial',
-        image: '/menu/large-mix.JPG',
-    },
-    {
-        id: 12,
-        name: 'Family Mix',
-        slug: 'family-mix',
-        description: 'Porsi keluarga mentai mix untuk berbagi bersama',
-        price: 'Rp 58.000',
-        category: 'spesial',
-        image: '/menu/family-mix.JPG',
-    },
-    {
-        id: 13,
-        name: 'Regular Boncabe',
-        slug: 'regular-boncabe',
-        description: 'Mentai dengan taburan boncabe pedas yang menggugah selera',
-        price: 'Rp 23.000',
-        category: 'spesial',
-        image: '/menu/regular-boncabe.JPG',
-    },
-    {
-        id: 14,
-        name: 'Large Boncabe',
-        slug: 'large-boncabe',
-        description: 'Porsi besar mentai boncabe untuk pecinta pedas',
-        price: 'Rp 28.000',
-        category: 'spesial',
-        image: '/menu/large-boncabe.JPG',
-    },
-    {
-        id: 15,
-        name: 'Family Boncabe',
-        slug: 'family-boncabe',
-        description: 'Porsi keluarga mentai boncabe dengan sensasi pedas nikmat',
-        price: 'Rp 55.000',
-        category: 'spesial',
-        image: '/menu/family-boncabe.JPG',
-    },
 ];
 
 export default function MenuPage() {
@@ -219,6 +83,9 @@ export default function MenuPage() {
                             name={item.name}
                             description={item.description}
                             price={item.price}
+                            portion={PORTION_LABEL[item.size]}
+                            sauceLabel={SAUCE_COUNT_LABEL}
+                            badges={item.badges}
                             image={item.image}
                         />
                     ))}
