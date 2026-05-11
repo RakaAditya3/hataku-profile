@@ -215,13 +215,12 @@ export default function Home() {
                         {SAUCE_OPTIONS.map((sauce) => (
                             <span
                                 key={sauce.name}
-                                className="inline-flex items-center gap-1.5 rounded-full border bg-white px-4 py-2 text-sm font-medium shadow-sm"
+                                className="inline-flex items-center rounded-full border bg-white px-4 py-2 text-sm font-medium shadow-sm"
                                 style={{
                                     borderColor: '#FDE68A',
                                     color: '#92400E',
                                 }}
                             >
-                                <span aria-hidden="true">{sauce.emoji}</span>
                                 {sauce.name}
                             </span>
                         ))}

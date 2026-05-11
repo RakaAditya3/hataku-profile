@@ -21,14 +21,14 @@ export const PORTION_LABEL: Record<MenuSize, string> = {
 };
 
 export const SAUCE_OPTIONS = [
-    { name: 'Mentai', emoji: '🍶' },
-    { name: 'Tartar', emoji: '🌊' },
-    { name: 'Volcano', emoji: '🌋' },
-    { name: 'Mentai Mix Tartar', emoji: '🌋🍶' },
-    { name: 'Mentai Mix Volcano', emoji: '🌋🌊' },
-    { name: 'Cheese', emoji: '🧀' },
-    { name: 'Mushroom', emoji: '🍄' },
-    { name: 'Bolognese', emoji: '🍝' },
+    { name: 'Mentai' },
+    { name: 'Tartar' },
+    { name: 'Volcano' },
+    { name: 'Mentai Mix Tartar' },
+    { name: 'Mentai Mix Volcano' },
+    { name: 'Cheese' },
+    { name: 'Mushroom' },
+    { name: 'Bolognese' },
 ];
 
 export const SAUCE_COUNT_LABEL = `${SAUCE_OPTIONS.length} pilihan saus`;
@@ -38,17 +38,17 @@ export const BADGE_STYLES: Record<
     { label: string; bg: string; text: string }
 > = {
     bestseller: {
-        label: '⭐ Terlaris',
+        label: 'Terlaris',
         bg: '#FEF3C7',
         text: '#92400E',
     },
     spicy: {
-        label: '🌶️ Pedas',
+        label: 'Pedas',
         bg: '#FEE2E2',
         text: '#991B1B',
     },
     cheesy: {
-        label: '🧀 Cheesy',
+        label: 'Cheesy',
         bg: '#FED7AA',
         text: '#9A3412',
     },

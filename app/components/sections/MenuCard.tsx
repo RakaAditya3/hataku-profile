@@ -114,7 +114,7 @@ export default function MenuCard({
                                     color: '#9A3412',
                                 }}
                             >
-                                🥫 {sauceLabel}
+                                {sauceLabel}
                             </span>
                         )}
                     </div>
